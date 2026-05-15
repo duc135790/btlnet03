@@ -19,13 +19,18 @@
         public int GiaBan { get; set; }
         public int SoLuong { get; set; }
         public int MaDanhMuc { get; set; }
-        public SanPham(int ma, string ten, int gia, int sl, int maDM)
+        public string MoTa { get; set; }
+        public string TrangThai { get; set; }
+
+        public SanPham(int ma, string ten, int gia, int sl, int maDM, string moTa = "", string trangThai = "")
         {
             this.MaSanPham = ma;
             this.TenSanPham = ten;
             this.GiaBan = gia;
             this.SoLuong = sl;
             this.MaDanhMuc = maDM;
+            this.MoTa = moTa;
+            this.TrangThai = trangThai;
         }
         public override string ToString() => TenSanPham;
     }

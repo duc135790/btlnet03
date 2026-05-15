@@ -38,26 +38,27 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.cboDanhMuc = new System.Windows.Forms.ComboBox();
             this.btnThemSP = new System.Windows.Forms.Button();
             this.btnSuaSP = new System.Windows.Forms.Button();
-            this.textBox7 = new System.Windows.Forms.TextBox();
             this.btnXoaSP = new System.Windows.Forms.Button();
-            this.btnLamMoiSP = new System.Windows.Forms.Button();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -76,8 +77,7 @@
             this.menuThongKe});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(908, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(688, 30);
             this.menuStrip1.TabIndex = 2;
             // 
             // menuSanPham
@@ -121,7 +121,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(604, 77);
+            this.groupBox1.Size = new System.Drawing.Size(657, 77);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm Kiếm Nâng Cao";
@@ -130,10 +130,10 @@
             // 
             this.button1.BackColor = System.Drawing.SystemColors.HotTrack;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(494, 24);
+            this.button1.Location = new System.Drawing.Point(571, 25);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(56, 26);
+            this.button1.Size = new System.Drawing.Size(66, 28);
             this.button1.TabIndex = 5;
             this.button1.Text = "Tìm";
             this.button1.UseVisualStyleBackColor = false;
@@ -144,7 +144,7 @@
             this.textBox1.Location = new System.Drawing.Point(253, 26);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(203, 22);
+            this.textBox1.Size = new System.Drawing.Size(312, 22);
             this.textBox1.TabIndex = 4;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -153,25 +153,21 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(42, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(180, 16);
+            this.label1.Size = new System.Drawing.Size(183, 16);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Tìm Tên hoặc mã Sản Phẩm:";
+            this.label1.Text = "Tìm Tên Hoặc Mã Sản Phẩm:";
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.comboBox1);
+            this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.cboDanhMuc);
             this.groupBox2.Controls.Add(this.btnThemSP);
             this.groupBox2.Controls.Add(this.btnSuaSP);
-            this.groupBox2.Controls.Add(this.textBox7);
             this.groupBox2.Controls.Add(this.btnXoaSP);
-            this.groupBox2.Controls.Add(this.btnLamMoiSP);
             this.groupBox2.Controls.Add(this.textBox5);
             this.groupBox2.Controls.Add(this.textBox4);
             this.groupBox2.Controls.Add(this.textBox3);
             this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label4);
@@ -181,33 +177,25 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(604, 287);
+            this.groupBox2.Size = new System.Drawing.Size(657, 288);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chi tiết Thông Tin Sản Phẩm";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Location = new System.Drawing.Point(191, 202);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(200, 24);
-            this.comboBox1.TabIndex = 17;
-            // 
             // cboDanhMuc
             // 
             this.cboDanhMuc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboDanhMuc.Location = new System.Drawing.Point(191, 84);
+            this.cboDanhMuc.Location = new System.Drawing.Point(253, 81);
             this.cboDanhMuc.Name = "cboDanhMuc";
-            this.cboDanhMuc.Size = new System.Drawing.Size(200, 24);
+            this.cboDanhMuc.Size = new System.Drawing.Size(384, 24);
             this.cboDanhMuc.TabIndex = 13;
             this.cboDanhMuc.SelectedIndexChanged += new System.EventHandler(this.cboDanhMuc_SelectedIndexChanged);
             // 
             // btnThemSP
             // 
             this.btnThemSP.BackColor = System.Drawing.Color.LightGreen;
-            this.btnThemSP.Location = new System.Drawing.Point(41, 239);
+            this.btnThemSP.Location = new System.Drawing.Point(45, 211);
             this.btnThemSP.Name = "btnThemSP";
             this.btnThemSP.Size = new System.Drawing.Size(80, 28);
             this.btnThemSP.TabIndex = 13;
@@ -218,27 +206,18 @@
             // btnSuaSP
             // 
             this.btnSuaSP.BackColor = System.Drawing.Color.LightBlue;
-            this.btnSuaSP.Location = new System.Drawing.Point(136, 239);
+            this.btnSuaSP.Location = new System.Drawing.Point(222, 211);
             this.btnSuaSP.Name = "btnSuaSP";
             this.btnSuaSP.Size = new System.Drawing.Size(80, 28);
             this.btnSuaSP.TabIndex = 14;
             this.btnSuaSP.Text = "Sửa";
             this.btnSuaSP.UseVisualStyleBackColor = false;
             this.btnSuaSP.Click += new System.EventHandler(this.btnSuaSP_Click);
-
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(191, 171);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(203, 22);
-            this.textBox7.TabIndex = 12;
             // 
             // btnXoaSP
             // 
             this.btnXoaSP.BackColor = System.Drawing.Color.LightCoral;
-            this.btnXoaSP.Location = new System.Drawing.Point(231, 239);
+            this.btnXoaSP.Location = new System.Drawing.Point(405, 211);
             this.btnXoaSP.Name = "btnXoaSP";
             this.btnXoaSP.Size = new System.Drawing.Size(80, 28);
             this.btnXoaSP.TabIndex = 15;
@@ -246,67 +225,30 @@
             this.btnXoaSP.UseVisualStyleBackColor = false;
             this.btnXoaSP.Click += new System.EventHandler(this.btnXoaSP_Click);
             // 
-            // btnLamMoiSP
-            // 
-            this.btnLamMoiSP.Location = new System.Drawing.Point(326, 239);
-            this.btnLamMoiSP.Name = "btnLamMoiSP";
-            this.btnLamMoiSP.Size = new System.Drawing.Size(80, 28);
-            this.btnLamMoiSP.TabIndex = 16;
-            this.btnLamMoiSP.Text = "Làm mới";
-            this.btnLamMoiSP.Click += new System.EventHandler(this.btnLamMoiSP_Click);
-            // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(191, 142);
+            this.textBox5.Location = new System.Drawing.Point(253, 142);
             this.textBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(203, 22);
+            this.textBox5.Size = new System.Drawing.Size(384, 22);
             this.textBox5.TabIndex = 10;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(191, 57);
+            this.textBox4.Location = new System.Drawing.Point(253, 54);
             this.textBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(203, 22);
+            this.textBox4.Size = new System.Drawing.Size(384, 22);
             this.textBox4.TabIndex = 9;
             this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(191, 110);
+            this.textBox3.Location = new System.Drawing.Point(253, 110);
             this.textBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(203, 22);
+            this.textBox3.Size = new System.Drawing.Size(384, 22);
             this.textBox3.TabIndex = 8;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(191, 26);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(203, 22);
-            this.textBox2.TabIndex = 7;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(42, 202);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(76, 16);
-            this.label8.TabIndex = 6;
-            this.label8.Text = "Trạng Thái:";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(42, 171);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(49, 16);
-            this.label7.TabIndex = 5;
-            this.label7.Text = "Mô Tả:";
             // 
             // label6
             // 
@@ -347,6 +289,36 @@
             this.label3.Text = "Tên Sản Phẩm:";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.dataGridView1);
+            this.groupBox3.Location = new System.Drawing.Point(11, 430);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox3.Size = new System.Drawing.Size(657, 288);
+            this.groupBox3.TabIndex = 5;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Danh Sách Sản Phẩm Hiện có:";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5});
+            this.dataGridView1.Location = new System.Drawing.Point(6, 32);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.RowTemplate.Height = 28;
+            this.dataGridView1.Size = new System.Drawing.Size(645, 241);
+            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -356,35 +328,68 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Mã Sản Phẩm (ID):";
             // 
-            // groupBox3
+            // textBox2
             // 
-            this.groupBox3.Controls.Add(this.dataGridView1);
-            this.groupBox3.Location = new System.Drawing.Point(11, 430);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox3.Size = new System.Drawing.Size(800, 187);
-            this.groupBox3.TabIndex = 5;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Danh Sách Sản Phẩm Hiện có:";
+            this.textBox2.Location = new System.Drawing.Point(253, 26);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(384, 22);
+            this.textBox2.TabIndex = 7;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
-            // dataGridView1
+            // button2
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(15, 32);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(761, 155);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.button2.Location = new System.Drawing.Point(557, 211);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(80, 28);
+            this.button2.TabIndex = 18;
+            this.button2.Text = "Làm mới";
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "MaSanPham";
+            this.Column1.HeaderText = "Mã Sản Phẩm";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 120;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "TenSanPham";
+            this.Column2.HeaderText = "Tên Sản Phẩm";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 120;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "TenDanhMuc";
+            this.Column3.HeaderText = "Danh Mục";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 120;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "GiaBan";
+            this.Column4.HeaderText = "Giá";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 120;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "SoLuong";
+            this.Column5.HeaderText = "Số Lượng";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 120;
             // 
             // QuanLySanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(908, 627);
+            this.ClientSize = new System.Drawing.Size(688, 741);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -418,25 +423,26 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.ComboBox cboDanhMuc;
         private System.Windows.Forms.Button btnThemSP;
         private System.Windows.Forms.Button btnSuaSP;
         private System.Windows.Forms.Button btnXoaSP;
-        private System.Windows.Forms.Button btnLamMoiSP;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
     }
 }
