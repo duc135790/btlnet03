@@ -53,17 +53,18 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnSuaSP = new System.Windows.Forms.Button();
             this.btnXoaSP = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaDonHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -196,7 +197,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(13, 63);
+            this.label6.Location = new System.Drawing.Point(13, 29);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(96, 16);
             this.label6.TabIndex = 24;
@@ -322,6 +323,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
+            this.MaDonHang,
             this.Column2,
             this.Column3,
             this.Column4,
@@ -335,6 +337,54 @@
             this.dataGridView1.Size = new System.Drawing.Size(675, 288);
             this.dataGridView1.TabIndex = 7;
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.dataGridView1);
+            this.groupBox3.Location = new System.Drawing.Point(11, 399);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox3.Size = new System.Drawing.Size(720, 340);
+            this.groupBox3.TabIndex = 8;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Hoá Đơn:";
+            // 
+            // btnSuaSP
+            // 
+            this.btnSuaSP.BackColor = System.Drawing.Color.LightBlue;
+            this.btnSuaSP.Location = new System.Drawing.Point(560, 85);
+            this.btnSuaSP.Name = "btnSuaSP";
+            this.btnSuaSP.Size = new System.Drawing.Size(80, 28);
+            this.btnSuaSP.TabIndex = 25;
+            this.btnSuaSP.Text = "Sửa";
+            this.btnSuaSP.UseVisualStyleBackColor = false;
+            // 
+            // btnXoaSP
+            // 
+            this.btnXoaSP.BackColor = System.Drawing.Color.LightCoral;
+            this.btnXoaSP.Location = new System.Drawing.Point(560, 120);
+            this.btnXoaSP.Name = "btnXoaSP";
+            this.btnXoaSP.Size = new System.Drawing.Size(80, 28);
+            this.btnXoaSP.TabIndex = 26;
+            this.btnXoaSP.Text = "Xóa";
+            this.btnXoaSP.UseVisualStyleBackColor = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(13, 60);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(89, 16);
+            this.label8.TabIndex = 27;
+            this.label8.Text = "Mã Đơn Hàng";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(213, 29);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(321, 22);
+            this.textBox6.TabIndex = 28;
+            // 
             // Column1
             // 
             this.Column1.DataPropertyName = "TenSanPham";
@@ -342,6 +392,14 @@
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
             this.Column1.Width = 125;
+            // 
+            // MaDonHang
+            // 
+            this.MaDonHang.DataPropertyName = "MaDonHang";
+            this.MaDonHang.HeaderText = "Mã Đơn Hàng";
+            this.MaDonHang.MinimumWidth = 6;
+            this.MaDonHang.Name = "MaDonHang";
+            this.MaDonHang.Width = 125;
             // 
             // Column2
             // 
@@ -382,54 +440,6 @@
             this.Column6.MinimumWidth = 6;
             this.Column6.Name = "Column6";
             this.Column6.Width = 125;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.dataGridView1);
-            this.groupBox3.Location = new System.Drawing.Point(11, 399);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox3.Size = new System.Drawing.Size(720, 340);
-            this.groupBox3.TabIndex = 8;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Hoá Đơn:";
-            // 
-            // btnSuaSP
-            // 
-            this.btnSuaSP.BackColor = System.Drawing.Color.LightBlue;
-            this.btnSuaSP.Location = new System.Drawing.Point(560, 85);
-            this.btnSuaSP.Name = "btnSuaSP";
-            this.btnSuaSP.Size = new System.Drawing.Size(80, 28);
-            this.btnSuaSP.TabIndex = 25;
-            this.btnSuaSP.Text = "Sửa";
-            this.btnSuaSP.UseVisualStyleBackColor = false;
-            // 
-            // btnXoaSP
-            // 
-            this.btnXoaSP.BackColor = System.Drawing.Color.LightCoral;
-            this.btnXoaSP.Location = new System.Drawing.Point(560, 120);
-            this.btnXoaSP.Name = "btnXoaSP";
-            this.btnXoaSP.Size = new System.Drawing.Size(80, 28);
-            this.btnXoaSP.TabIndex = 26;
-            this.btnXoaSP.Text = "Xóa";
-            this.btnXoaSP.UseVisualStyleBackColor = false;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(13, 35);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(89, 16);
-            this.label8.TabIndex = 27;
-            this.label8.Text = "Mã Đơn Hàng";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(213, 29);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(321, 22);
-            this.textBox6.TabIndex = 28;
             // 
             // GiaoDichBanHang
             // 
@@ -485,15 +495,16 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Button btnSuaSP;
+        private System.Windows.Forms.Button btnXoaSP;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaDonHang;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.Button btnSuaSP;
-        private System.Windows.Forms.Button btnXoaSP;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label8;
     }
 }
