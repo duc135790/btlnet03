@@ -341,6 +341,7 @@
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox3.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.GiaoDichBanHang_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

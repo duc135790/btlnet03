@@ -70,23 +70,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatabaseConnection.cs" />
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="GiaoDichBanHang.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GiaoDichBanHang.Designer.cs">
       <DependentUpon>GiaoDichBanHang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Managers.cs" />
     <Compile Include="Models.cs" />
@@ -127,9 +115,6 @@
   <ItemGroup>
     <EmbeddedResource Include="GiaoDichBanHang.resx">
       <DependentUpon>GiaoDichBanHang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLyDanhMuc.resx">
       <DependentUpon>QuanLyDanhMuc.cs</DependentUpon>

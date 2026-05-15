@@ -9,11 +9,9 @@
             this.MaDanhMuc = ma;
             this.TenDanhMuc = ten;
         }
-        public override string ToString()
-        {
-            return TenDanhMuc;
-        }
+        public override string ToString() => TenDanhMuc;
     }
+
     public class SanPham
     {
         public int MaSanPham { get; set; }
@@ -29,5 +27,6 @@
             this.SoLuong = sl;
             this.MaDanhMuc = maDM;
         }
+        public override string ToString() => TenSanPham;
     }
 }

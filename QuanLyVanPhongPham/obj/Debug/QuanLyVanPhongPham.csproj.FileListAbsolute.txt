@@ -29,7 +29,6 @@ D:\btlnet\a 1\a\QuanLyVanPhongPham\QuanLyVanPhongPham\bin\Debug\EntityFramework.
 D:\btlnet\a 1\a\QuanLyVanPhongPham\QuanLyVanPhongPham\bin\Debug\System.Data.SQLite.xml
 D:\btlnet\a 1\a\QuanLyVanPhongPham\QuanLyVanPhongPham\obj\Debug\QuanLyVanPhongPham.csproj.AssemblyReference.cache
 D:\btlnet\a 1\a\QuanLyVanPhongPham\QuanLyVanPhongPham\obj\Debug\QuanLyVanPhongPham.GiaoDichBanHang.resources
-D:\btlnet\a 1\a\QuanLyVanPhongPham\QuanLyVanPhongPham\obj\Debug\QuanLyVanPhongPham.MainForm.resources
 D:\btlnet\a 1\a\QuanLyVanPhongPham\QuanLyVanPhongPham\obj\Debug\QuanLyVanPhongPham.QuanLyDanhMuc.resources
 D:\btlnet\a 1\a\QuanLyVanPhongPham\QuanLyVanPhongPham\obj\Debug\QuanLyVanPhongPham.QuanLySanPham.resources
 D:\btlnet\a 1\a\QuanLyVanPhongPham\QuanLyVanPhongPham\obj\Debug\QuanLyVanPhongPham.ThongKe.resources

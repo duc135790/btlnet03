@@ -1,6 +1,5 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
-
 namespace QuanLyVanPhongPham
 {
     public class SanPhamManager
@@ -93,14 +92,35 @@ namespace QuanLyVanPhongPham
         }
         public void Them(string nguoiThucHien, string tenSP, int soLuongBan, int tongTien)
         {
-            SqlCommand cmd = new SqlCommand(
-                "insert into GiaoDich(NguoiThucHien, TenSanPham, SoLuongBan, TongTien) " +
-                "values(@nguoi, @tensp, @sl, @tien)");
-            cmd.Parameters.AddWithValue("@nguoi", nguoiThucHien);
-            cmd.Parameters.AddWithValue("@tensp", tenSP);
-            cmd.Parameters.AddWithValue("@sl", soLuongBan);
-            cmd.Parameters.AddWithValue("@tien", tongTien);
-            DatabaseConnection.ExecuteNonQuery(cmd);
+            using (SqlConnection conn = new SqlConnection(DatabaseConnection.GetConnStr()))
+            {
+                conn.Open();
+                SqlTransaction tran = conn.BeginTransaction();
+                try
+                {
+                    SqlCommand cmdGD = new SqlCommand(
+                        "insert into GiaoDich(NguoiThucHien, TenSanPham, SoLuongBan, TongTien) " +
+                        "values(@nguoi, @tensp, @sl, @tien)", conn, tran);
+                    cmdGD.Parameters.AddWithValue("@nguoi", nguoiThucHien);
+                    cmdGD.Parameters.AddWithValue("@tensp", tenSP);
+                    cmdGD.Parameters.AddWithValue("@sl", soLuongBan);
+                    cmdGD.Parameters.AddWithValue("@tien", tongTien);
+                    cmdGD.ExecuteNonQuery();
+                    SqlCommand cmdSP = new SqlCommand(
+                        "update SanPham set SoLuong = SoLuong - @sl " +
+                        "where TenSanPham = @tensp", conn, tran);
+                    cmdSP.Parameters.AddWithValue("@sl", soLuongBan);
+                    cmdSP.Parameters.AddWithValue("@tensp", tenSP);
+                    cmdSP.ExecuteNonQuery();
+
+                    tran.Commit();
+                }
+                catch
+                {
+                    tran.Rollback();
+                    throw;
+                }
+            }
         }
         public DataTable ThongKeDoanhThu()
         {
