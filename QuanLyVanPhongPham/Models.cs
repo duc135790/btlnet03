@@ -11,7 +11,6 @@
         }
         public override string ToString() => TenDanhMuc;
     }
-
     public class SanPham
     {
         public int MaSanPham { get; set; }

@@ -35,13 +35,12 @@
             this.menuThongKe = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.btn_show = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -100,11 +99,11 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.dataGridView1);
-            this.groupBox4.Location = new System.Drawing.Point(0, 232);
+            this.groupBox4.Location = new System.Drawing.Point(11, 232);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox4.Size = new System.Drawing.Size(749, 491);
+            this.groupBox4.Size = new System.Drawing.Size(687, 506);
             this.groupBox4.TabIndex = 8;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Danh Sách Thống Kê";
@@ -116,20 +115,13 @@
             this.Column2,
             this.Column3,
             this.Column1});
-            this.dataGridView1.Location = new System.Drawing.Point(11, 54);
+            this.dataGridView1.Location = new System.Drawing.Point(18, 41);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(687, 491);
+            this.dataGridView1.Size = new System.Drawing.Size(652, 459);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(268, 59);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker1.TabIndex = 18;
             // 
             // Column2
             // 
@@ -155,6 +147,14 @@
             this.Column1.Name = "Column1";
             this.Column1.Width = 220;
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(268, 59);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker1.TabIndex = 18;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -162,7 +162,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(236, 16);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Tìm Theo Khoảng Thời GIan: Từ Ngày:";
+            this.label1.Text = "Tìm Theo Khoảng Thời Gian: Từ Ngày:";
             // 
             // label2
             // 
@@ -174,36 +174,29 @@
             this.label2.Text = "Đến Ngày:";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(574, 58);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(80, 28);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "Làm mới";
-            // 
             // dateTimePicker2
             // 
             this.dateTimePicker2.Location = new System.Drawing.Point(268, 138);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(200, 22);
             this.dateTimePicker2.TabIndex = 19;
+            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
             // btn_show
             // 
-            this.btn_show.Location = new System.Drawing.Point(574, 138);
+            this.btn_show.Location = new System.Drawing.Point(553, 59);
             this.btn_show.Name = "btn_show";
-            this.btn_show.Size = new System.Drawing.Size(75, 23);
+            this.btn_show.Size = new System.Drawing.Size(101, 95);
             this.btn_show.TabIndex = 20;
             this.btn_show.Text = "Xem";
             this.btn_show.UseVisualStyleBackColor = true;
+            this.btn_show.Click += new System.EventHandler(this.btn_show_Click_1);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btn_show);
             this.groupBox1.Controls.Add(this.dateTimePicker2);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(11, 42);
@@ -214,6 +207,7 @@
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm Kiếm và Cấu Hình Báo Cáo:";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // ThongKe
             // 
@@ -248,14 +242,13 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Button btn_show;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
     }
 }

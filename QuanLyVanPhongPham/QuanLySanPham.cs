@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-
 namespace QuanLyVanPhongPham
 {
     public partial class QuanLySanPham : Form
@@ -16,45 +15,40 @@ namespace QuanLyVanPhongPham
         {
             InitializeComponent();
         }
-
         private void QuanLySanPham_Load(object sender, EventArgs e)
         {
-            // Wire nút Làm mới (button2 chưa được wire trong designer)
-            button2.Click += btnLamMoiSP_Click;
-
+            button2.Click += button2_Click;
+            dataGridView1.CellClick += dataGridView1_CellClick;
             LoadDanhSachSanPham();
             LoadComboDanhMuc();
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             dataGridView1.DataSource = spManager.TimKiem(textBox1.Text.Trim(), "");
         }
-
-        private void btnLamMoiSP_Click(object sender, EventArgs e) => LamMoi();
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
-            if (dataGridView1.Rows.Count > 0 && dataGridView1.CurrentRow != null)
-            {
-                // Đọc MaSanPham từ DataBoundItem thay vì Cells[] để tránh lỗi tên column
-                DataRowView drv = dataGridView1.CurrentRow.DataBoundItem as DataRowView;
-                if (drv == null) return;
+            var row = dataGridView1.Rows[e.RowIndex];
+            if (row.IsNewRow) return;
+            DataRowView drv = row.DataBoundItem as DataRowView;
+            if (drv == null) return;
 
-                _idSanPham = Convert.ToInt32(drv["MaSanPham"]);
-                _idDanhMuc = Convert.ToInt32(drv["MaDanhMuc"] == DBNull.Value ? 0 : drv["MaDanhMuc"]);
+            _idSanPham = Convert.ToInt32(drv["MaSanPham"]);
+            textBox2.Text = drv["MaSanPham"].ToString();
+            textBox4.Text = drv["TenSanPham"].ToString();
+            textBox3.Text = drv["GiaBan"].ToString();
+            textBox5.Text = drv["SoLuong"].ToString();
 
-                textBox2.Text = drv["MaSanPham"].ToString();
-                textBox4.Text = drv["TenSanPham"].ToString();
-                textBox3.Text = drv["GiaBan"].ToString();
-                textBox5.Text = drv["SoLuong"].ToString();
+            DataTable dtDM = DatabaseConnection.ExecuteQuery(
+                "SELECT MaDanhMuc FROM SanPham WHERE MaSanPham = " + _idSanPham);
+            if (dtDM.Rows.Count > 0)
+                _idDanhMuc = Convert.ToInt32(dtDM.Rows[0]["MaDanhMuc"]);
 
-                // Load combo và chọn đúng danh mục
-                LoadComboDanhMuc();
-            }
+            LoadComboDanhMuc();
         }
-
+        
         private void btnThemSP_Click(object sender, EventArgs e)
         {
             if (!KiemTraInput()) return;
@@ -67,7 +61,6 @@ namespace QuanLyVanPhongPham
             MessageBox.Show("Thêm sản phẩm thành công!");
             LamMoi();
         }
-
         private void btnSuaSP_Click(object sender, EventArgs e)
         {
             if (_idSanPham == 0) { MessageBox.Show("Vui lòng chọn sản phẩm cần sửa!"); return; }
@@ -82,7 +75,6 @@ namespace QuanLyVanPhongPham
             MessageBox.Show("Sửa sản phẩm thành công!");
             LamMoi();
         }
-
         private void btnXoaSP_Click(object sender, EventArgs e)
         {
             if (_idSanPham == 0) { MessageBox.Show("Vui lòng chọn sản phẩm cần xóa!"); return; }
@@ -95,23 +87,19 @@ namespace QuanLyVanPhongPham
                 LamMoi();
             }
         }
-
         private void menuSanPham_Click(object sender, EventArgs e) { }
         private void menuDanhMuc_Click(object sender, EventArgs e) => AppContext.NavTo(this, new QuanLyDanhMuc());
         private void menuGiaoDich_Click(object sender, EventArgs e) => AppContext.NavTo(this, new GiaoDichBanHang());
         private void menuThongKe_Click(object sender, EventArgs e) => AppContext.NavTo(this, new ThongKe());
-
         private void LoadDanhSachSanPham()
         {
-            // Cần kéo thêm MaDanhMuc để đọc được khi chọn hàng
             DataTable dt = DatabaseConnection.ExecuteQuery(
-                "SELECT sp.MaSanPham, sp.MaDanhMuc, dm.TenDanhMuc, sp.TenSanPham, sp.GiaBan, sp.SoLuong " +
+                "SELECT sp.MaSanPham, sp.TenSanPham, dm.TenDanhMuc, sp.GiaBan, sp.SoLuong " +
                 "FROM SanPham sp " +
                 "JOIN DanhMuc dm ON sp.MaDanhMuc = dm.MaDanhMuc " +
                 "ORDER BY sp.MaSanPham DESC");
             dataGridView1.DataSource = dt;
         }
-
         private void LoadComboDanhMuc()
         {
             using (SqlConnection conn = new SqlConnection(DatabaseConnection.GetConnStr()))
@@ -132,7 +120,6 @@ namespace QuanLyVanPhongPham
                 if (list.Count > 0) cboDanhMuc.SelectedIndex = selIdx;
             }
         }
-
         private void LamMoi()
         {
             textBox1.Text = textBox2.Text = textBox3.Text =
@@ -142,7 +129,6 @@ namespace QuanLyVanPhongPham
             LoadDanhSachSanPham();
             LoadComboDanhMuc();
         }
-
         private bool KiemTraInput()
         {
             if (string.IsNullOrWhiteSpace(textBox4.Text))
@@ -153,8 +139,6 @@ namespace QuanLyVanPhongPham
             { MessageBox.Show("Số lượng phải là số nguyên dương!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning); return false; }
             return true;
         }
-
-        // Stubs
         private void textBox1_TextChanged(object sender, EventArgs e) { }
         private void textBox2_TextChanged(object sender, EventArgs e) { }
         private void textBox4_TextChanged(object sender, EventArgs e) { }
@@ -165,5 +149,9 @@ namespace QuanLyVanPhongPham
         private void label8_Click(object sender, EventArgs e) { }
         private void groupBox2_Enter(object sender, EventArgs e) { }
         private void btnSuaSP_Click_1(object sender, EventArgs e) => btnSuaSP_Click(sender, e);
+
+        private void button2_Click(object sender, EventArgs e) => LamMoi();
+
+        
     }
 }

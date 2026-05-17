@@ -13,7 +13,6 @@ namespace QuanLyVanPhongPham
             Application.Run(new MainAppContext());
         }
     }
-
     public class MainAppContext : ApplicationContext
     {
         public MainAppContext()
@@ -21,7 +20,6 @@ namespace QuanLyVanPhongPham
             AppContext.NavTo(null, new QuanLySanPham());
         }
     }
-
     public class AppContext
     {
         public static void NavTo(Form current, Form next)

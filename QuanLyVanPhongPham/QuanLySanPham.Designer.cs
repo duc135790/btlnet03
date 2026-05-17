@@ -38,6 +38,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.cboDanhMuc = new System.Windows.Forms.ComboBox();
             this.btnThemSP = new System.Windows.Forms.Button();
             this.btnSuaSP = new System.Windows.Forms.Button();
@@ -45,15 +46,14 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,7 +77,7 @@
             this.menuThongKe});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(688, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(688, 28);
             this.menuStrip1.TabIndex = 2;
             // 
             // menuSanPham
@@ -183,6 +183,15 @@
             this.groupBox2.Text = "Chi tiết Thông Tin Sản Phẩm";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(557, 211);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(80, 28);
+            this.button2.TabIndex = 18;
+            this.button2.Text = "Làm mới";
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // cboDanhMuc
             // 
             this.cboDanhMuc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -250,6 +259,15 @@
             this.textBox3.Size = new System.Drawing.Size(384, 22);
             this.textBox3.TabIndex = 8;
             // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(253, 26);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(384, 22);
+            this.textBox2.TabIndex = 7;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -264,9 +282,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(42, 112);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(98, 16);
+            this.label5.Size = new System.Drawing.Size(61, 16);
             this.label5.TabIndex = 3;
-            this.label5.Text = "Giá Bán (VND):";
+            this.label5.Text = "Giá Bán :";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label4
@@ -288,6 +306,15 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Tên Sản Phẩm:";
             this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(42, 29);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(94, 16);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Mã Sản Phẩm:";
             // 
             // groupBox3
             // 
@@ -317,33 +344,8 @@
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(645, 241);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(42, 29);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(118, 16);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Mã Sản Phẩm (ID):";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(253, 26);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(384, 22);
-            this.textBox2.TabIndex = 7;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(557, 211);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(80, 28);
-            this.button2.TabIndex = 18;
-            this.button2.Text = "Làm mới";
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // Column1
             // 
@@ -351,7 +353,7 @@
             this.Column1.HeaderText = "Mã Sản Phẩm";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
-            this.Column1.Width = 120;
+            this.Column1.Width = 140;
             // 
             // Column2
             // 
@@ -359,7 +361,7 @@
             this.Column2.HeaderText = "Tên Sản Phẩm";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
-            this.Column2.Width = 120;
+            this.Column2.Width = 140;
             // 
             // Column3
             // 
@@ -375,7 +377,7 @@
             this.Column4.HeaderText = "Giá";
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
-            this.Column4.Width = 120;
+            this.Column4.Width = 80;
             // 
             // Column5
             // 
@@ -383,7 +385,7 @@
             this.Column5.HeaderText = "Số Lượng";
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
-            this.Column5.Width = 120;
+            this.Column5.Width = 125;
             // 
             // QuanLySanPham
             // 

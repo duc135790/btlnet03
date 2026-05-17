@@ -38,6 +38,10 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btnXoaSP = new System.Windows.Forms.Button();
+            this.btnSuaSP = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -53,11 +57,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btnSuaSP = new System.Windows.Forms.Button();
-            this.btnXoaSP = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaDonHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,6 +64,7 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -159,9 +159,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(6, 36);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(201, 16);
+            this.label1.Size = new System.Drawing.Size(200, 16);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Khách Hàng Hoặc Mã Đơn Hàng";
+            this.label1.Text = "Khách Hàng Hoặc Mã Giao Dịch";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // groupBox2
@@ -194,6 +194,45 @@
             this.groupBox2.Text = "Chi Tiết Thông tin Hoá Đơn Giao dịch bán hàng";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(213, 51);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(321, 22);
+            this.textBox6.TabIndex = 28;
+            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(13, 60);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(88, 16);
+            this.label8.TabIndex = 27;
+            this.label8.Text = "Mã Giao Dịch";
+            // 
+            // btnXoaSP
+            // 
+            this.btnXoaSP.BackColor = System.Drawing.Color.LightCoral;
+            this.btnXoaSP.Location = new System.Drawing.Point(560, 120);
+            this.btnXoaSP.Name = "btnXoaSP";
+            this.btnXoaSP.Size = new System.Drawing.Size(80, 28);
+            this.btnXoaSP.TabIndex = 26;
+            this.btnXoaSP.Text = "Xóa";
+            this.btnXoaSP.UseVisualStyleBackColor = false;
+            this.btnXoaSP.Click += new System.EventHandler(this.btnXoaSP_Click);
+            // 
+            // btnSuaSP
+            // 
+            this.btnSuaSP.BackColor = System.Drawing.Color.LightBlue;
+            this.btnSuaSP.Location = new System.Drawing.Point(560, 85);
+            this.btnSuaSP.Name = "btnSuaSP";
+            this.btnSuaSP.Size = new System.Drawing.Size(80, 28);
+            this.btnSuaSP.TabIndex = 25;
+            this.btnSuaSP.Text = "Sửa";
+            this.btnSuaSP.UseVisualStyleBackColor = false;
+            this.btnSuaSP.Click += new System.EventHandler(this.btnSuaSP_Click);
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -205,7 +244,7 @@
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(213, 57);
+            this.textBox5.Location = new System.Drawing.Point(213, 23);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(321, 22);
             this.textBox5.TabIndex = 23;
@@ -222,9 +261,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(13, 210);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 16);
+            this.label5.Size = new System.Drawing.Size(94, 16);
             this.label5.TabIndex = 21;
-            this.label5.Text = "Số Lượng:";
+            this.label5.Text = "Số Lượng Bán:";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // dateTimePicker1
@@ -241,6 +280,7 @@
             this.button2.Size = new System.Drawing.Size(80, 28);
             this.button2.TabIndex = 19;
             this.button2.Text = "Làm mới";
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // cboDanhMuc
             // 
@@ -336,54 +376,8 @@
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(675, 288);
             this.dataGridView1.TabIndex = 7;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.dataGridView1);
-            this.groupBox3.Location = new System.Drawing.Point(11, 399);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox3.Size = new System.Drawing.Size(720, 340);
-            this.groupBox3.TabIndex = 8;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Hoá Đơn:";
-            // 
-            // btnSuaSP
-            // 
-            this.btnSuaSP.BackColor = System.Drawing.Color.LightBlue;
-            this.btnSuaSP.Location = new System.Drawing.Point(560, 85);
-            this.btnSuaSP.Name = "btnSuaSP";
-            this.btnSuaSP.Size = new System.Drawing.Size(80, 28);
-            this.btnSuaSP.TabIndex = 25;
-            this.btnSuaSP.Text = "Sửa";
-            this.btnSuaSP.UseVisualStyleBackColor = false;
-            // 
-            // btnXoaSP
-            // 
-            this.btnXoaSP.BackColor = System.Drawing.Color.LightCoral;
-            this.btnXoaSP.Location = new System.Drawing.Point(560, 120);
-            this.btnXoaSP.Name = "btnXoaSP";
-            this.btnXoaSP.Size = new System.Drawing.Size(80, 28);
-            this.btnXoaSP.TabIndex = 26;
-            this.btnXoaSP.Text = "Xóa";
-            this.btnXoaSP.UseVisualStyleBackColor = false;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(13, 60);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(89, 16);
-            this.label8.TabIndex = 27;
-            this.label8.Text = "Mã Đơn Hàng";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(213, 29);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(321, 22);
-            this.textBox6.TabIndex = 28;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // Column1
             // 
@@ -395,8 +389,8 @@
             // 
             // MaDonHang
             // 
-            this.MaDonHang.DataPropertyName = "MaDonHang";
-            this.MaDonHang.HeaderText = "Mã Đơn Hàng";
+            this.MaDonHang.DataPropertyName = "MaGiaoDich";
+            this.MaDonHang.HeaderText = "Mã Giao Dịch";
             this.MaDonHang.MinimumWidth = 6;
             this.MaDonHang.Name = "MaDonHang";
             this.MaDonHang.Width = 125;
@@ -435,11 +429,24 @@
             // 
             // Column6
             // 
-            this.Column6.DataPropertyName = "SoLuong";
-            this.Column6.HeaderText = "Số Lượng";
+            this.Column6.DataPropertyName = "SoLuongBan ";
+            this.Column6.HeaderText = "Số Lượng Bán";
             this.Column6.MinimumWidth = 6;
             this.Column6.Name = "Column6";
             this.Column6.Width = 125;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.dataGridView1);
+            this.groupBox3.Location = new System.Drawing.Point(11, 399);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox3.Size = new System.Drawing.Size(720, 340);
+            this.groupBox3.TabIndex = 8;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Hoá Đơn:";
+            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
             // GiaoDichBanHang
             // 

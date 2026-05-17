@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Data;
 using System.Windows.Forms;
-
 namespace QuanLyVanPhongPham
 {
     public partial class QuanLyDanhMuc : Form
@@ -13,27 +12,27 @@ namespace QuanLyVanPhongPham
         {
             InitializeComponent();
         }
-
         private void QuanLyDanhMuc_Load(object sender, EventArgs e)
         {
-            // Wire nút Làm mới (button1 chưa được wire trong designer)
-            button1.Click += btnLamMoiSP_Click;
-
+            button1.Click += button1_Click;
             LoadDanhSachDanhMuc();
         }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
-            if (dataGridView1.Rows.Count > 0 && dataGridView1.CurrentRow != null)
-            {
-                // Đọc từ DataBoundItem thay vì Cells[] để tránh lỗi tên column
-                DataRowView drv = dataGridView1.CurrentRow.DataBoundItem as DataRowView;
-                if (drv == null) return;
+            var row = dataGridView1.Rows[e.RowIndex];
+            if (row.IsNewRow) return;
 
-                _idDanhMuc = Convert.ToInt32(drv["MaDanhMuc"]);
-                textBox4.Text = drv["TenDanhMuc"].ToString();
-            }
+            DataRowView drv = row.DataBoundItem as DataRowView;
+            if (drv == null) return;
+
+            _idDanhMuc = Convert.ToInt32(drv["MaDanhMuc"]);
+            textBox1.Text = drv["MaDanhMuc"].ToString();
+            textBox4.Text = drv["TenDanhMuc"].ToString();
+        }
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dataGridView1_CellClick(sender, e);
         }
 
         private void btnThemSP_Click(object sender, EventArgs e)
@@ -44,7 +43,6 @@ namespace QuanLyVanPhongPham
             MessageBox.Show("Thêm danh mục thành công!");
             LamMoi();
         }
-
         private void btnSuaSP_Click(object sender, EventArgs e)
         {
             if (_idDanhMuc == 0) { MessageBox.Show("Vui lòng chọn danh mục cần sửa!"); return; }
@@ -54,7 +52,6 @@ namespace QuanLyVanPhongPham
             MessageBox.Show("Sửa danh mục thành công!");
             LamMoi();
         }
-
         private void btnXoaSP_Click(object sender, EventArgs e)
         {
             if (_idDanhMuc == 0) { MessageBox.Show("Vui lòng chọn danh mục cần xóa!"); return; }
@@ -66,21 +63,24 @@ namespace QuanLyVanPhongPham
                 LamMoi();
             }
         }
-
-        private void btnLamMoiSP_Click(object sender, EventArgs e) => LamMoi();
-
+       
         private void menuSanPham_Click(object sender, EventArgs e) => AppContext.NavTo(this, new QuanLySanPham());
         private void menuDanhMuc_Click(object sender, EventArgs e) { }
         private void menuGiaoDich_Click(object sender, EventArgs e) => AppContext.NavTo(this, new GiaoDichBanHang());
         private void menuThongKe_Click(object sender, EventArgs e) => AppContext.NavTo(this, new ThongKe());
-
-        private void LoadDanhSachDanhMuc() => dataGridView1.DataSource = dmManager.GetDanhSach();
-
+        private void LoadDanhSachDanhMuc()
+        {
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = dmManager.GetDanhSach();
+        }
         private void LamMoi()
         {
             textBox4.Text = "";
+            textBox1.Text = "";
             _idDanhMuc = 0;
             LoadDanhSachDanhMuc();
         }
+
+        private void button1_Click(object sender, EventArgs e) => LamMoi();
     }
 }
